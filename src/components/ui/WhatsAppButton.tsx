@@ -1,8 +1,8 @@
 import { MessageCircle } from 'lucide-react'
-import { waLink } from '../../data/constants'
+import { SITE, waLink } from '../../config/site'
 
 interface Props {
-  message: string
+  message?: string
   className?: string
   variant?: 'primary' | 'outline' | 'floating'
   label?: string
@@ -15,7 +15,7 @@ export default function WhatsAppButton({ message, className = '', variant = 'pri
         href={waLink(message)}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat via WhatsApp"
+        aria-label={`Chat via WhatsApp dengan ${SITE.brand}`}
         className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-transform hover:scale-110 ${className}`}
       >
         <MessageCircle className="h-7 w-7" fill="currentColor" strokeWidth={0} />

@@ -5,6 +5,7 @@ import SectionHeading from '../components/ui/SectionHeading'
 import RentalCard from '../components/ui/RentalCard'
 import { RENTALS } from '../data/rentals'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
+import { SITE } from '../config/site'
 
 const REQUIREMENTS = [
   { icon: FileCheck2, title: 'KTP / Paspor Asli', desc: 'KTP untuk WNI atau Paspor & KITAS untuk wisatawan asing.' },
@@ -24,7 +25,7 @@ export default function Rental() {
         description="Armada terawat untuk kebutuhan wisata, bisnis, hingga acara khusus di seluruh Bali — tersedia paket harian dan bulanan."
       >
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin sewa mobil. Mohon info pilihan unit dan harganya." />
+          <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin sewa mobil. Mohon info pilihan unit dan harganya.`} />
           <a href="#armada" className="btn-outline">
             Lihat Pilihan Armada
           </a>
@@ -97,7 +98,7 @@ export default function Rental() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin tanya syarat sewa mobil." label="Konsultasi via WhatsApp" />
+            <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin tanya syarat sewa mobil.`} label="Konsultasi via WhatsApp" />
           </div>
         </div>
       </section>

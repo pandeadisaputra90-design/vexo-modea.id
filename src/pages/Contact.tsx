@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from 'react'
 import { MapPin, Phone, Mail, Clock, Send, Navigation } from 'lucide-react'
 import PageHero from '../components/ui/PageHero'
-import { BUSINESS, waLink } from '../data/constants'
+import SectionHeading from '../components/ui/SectionHeading'
+import { SITE, waLink } from '../config/site'
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -11,13 +12,11 @@ export default function Contact() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    const text = `Halo MoDeal Auto Bali, perkenalkan saya ${name || '-'} (${phone || '-'}).\nTopik: ${topic}\nPesan: ${
+    const text = `Halo ${SITE.brand}, perkenalkan saya ${name || '-'} (${phone || '-'}).\nTopik: ${topic}\nPesan: ${
       message || '-'
     }`
     window.open(waLink(text), '_blank', 'noopener,noreferrer')
   }
-
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS.mapsQuery)}`
 
   return (
     <>
@@ -27,41 +26,12 @@ export default function Contact() {
         description="Kunjungi showroom kami di Denpasar atau hubungi tim melalui WhatsApp, telepon, maupun form di bawah ini."
       />
 
-      <section className="relative bg-charcoal-950 pb-24">
+      <section className="relative bg-charcoal-950 pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="space-y-6">
-              <div className="glass-card space-y-5 p-6">
-                <ContactRow icon={MapPin} label="Alamat Showroom" value={BUSINESS.address} />
-                <ContactRow icon={Phone} label="Telepon / WhatsApp" value={BUSINESS.phone} href={waLink('Halo MoDeal Auto Bali, saya ingin bertanya-tanya.')} />
-                <ContactRow icon={Mail} label="Email" value={BUSINESS.email} href={`mailto:${BUSINESS.email}`} />
-                <ContactRow
-                  icon={Clock}
-                  label="Jam Operasional"
-                  value={BUSINESS.hours.map((h) => `${h.day}: ${h.time}`).join(' | ')}
-                />
-              </div>
-
-              <a
-                href={mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-card group relative block h-64 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-grid opacity-40" />
-                <div className="absolute inset-0 bg-radial-glow" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
-                  <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-electric-500/20 text-electric-400 ring-1 ring-electric-400/40">
-                    <MapPin className="h-7 w-7" />
-                    <span className="absolute inset-0 animate-ping rounded-full bg-electric-500/30" />
-                  </span>
-                  <p className="font-display text-sm font-bold text-white">MoDeal Auto Bali</p>
-                  <p className="max-w-xs text-xs text-white/50">{BUSINESS.address}</p>
-                  <span className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-electric-400 group-hover:underline">
-                    <Navigation className="h-3.5 w-3.5" /> Buka di Google Maps
-                  </span>
-                </div>
-              </a>
+            <div className="glass-card space-y-5 p-6">
+              <ContactRow icon={Phone} label="Telepon / WhatsApp" value={SITE.phone} href={waLink()} />
+              <ContactRow icon={Mail} label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
             </div>
 
             <div className="glass-card p-6 sm:p-8">
@@ -124,6 +94,45 @@ export default function Contact() {
                   <Send className="h-4 w-4" /> Kirim via WhatsApp
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-charcoal-900 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading eyebrow="Lokasi & Kontak" title="Kunjungi Showroom" highlight="Kami di Denpasar" />
+
+          <div className="glass-card mt-12 grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+            <iframe
+              src={SITE.mapsEmbed}
+              title={`Lokasi ${SITE.brand}`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-80 w-full border-0 lg:h-full lg:min-h-[360px]"
+            />
+            <div className="flex flex-col justify-center gap-5 p-6 sm:p-8">
+              <div className="flex items-start gap-3.5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-electric-500/10 text-electric-400 ring-1 ring-white/10">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-wider text-white/40">Alamat Showroom</p>
+                  <p className="text-sm font-medium text-white/85">{SITE.address}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3.5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-electric-500/10 text-electric-400 ring-1 ring-white/10">
+                  <Clock className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-wider text-white/40">Jam Operasional</p>
+                  <p className="text-sm font-medium text-white/85">{SITE.hours}</p>
+                </div>
+              </div>
+              <a href={SITE.mapsLink} target="_blank" rel="noopener noreferrer" className="btn-outline w-fit">
+                <Navigation className="h-4 w-4" /> Buka di Maps
+              </a>
             </div>
           </div>
         </div>

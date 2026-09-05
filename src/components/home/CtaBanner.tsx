@@ -15,7 +15,7 @@ export default function CtaBanner() {
           Tim kami siap membantu proses pembelian, kredit, sewa, hingga inspeksi mobil impianmu di Bali.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin konsultasi." label="Konsultasi via WhatsApp" />
+          <WhatsAppButton label="Konsultasi via WhatsApp" />
           <Link to="/inspeksi" className="btn-outline">
             <CalendarCheck className="h-4 w-4" /> Jadwalkan Inspeksi
           </Link>

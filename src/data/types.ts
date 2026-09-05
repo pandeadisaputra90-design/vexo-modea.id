@@ -24,6 +24,7 @@ export interface Vehicle {
   bodyType: BodyType
   color: string
   accent: Accent
+  plat: string
   location: string
   condition: string
   tags: string[]

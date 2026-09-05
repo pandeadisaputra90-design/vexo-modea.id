@@ -2,6 +2,7 @@ import { Landmark, Wallet, ShieldCheck, BadgeCheck, FileText, PhoneCall, CheckCi
 import PageHero from '../components/ui/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
+import { SITE } from '../config/site'
 
 const CREDIT_STEPS = [
   { icon: FileText, title: 'Ajukan & Lengkapi Dokumen', desc: 'Isi form pengajuan dan lengkapi KTP, KK, serta slip gaji/rekening koran.' },
@@ -40,10 +41,10 @@ export default function Financing() {
         description="Wujudkan mobil impian dengan proses kredit mudah, atau dapatkan dana tambahan dengan jaminan BPKB — dilengkapi proteksi asuransi dan garansi."
       >
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin mengajukan kredit mobil." label="Ajukan Kredit" />
+          <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin mengajukan kredit mobil.`} label="Ajukan Kredit" />
           <WhatsAppButton
             variant="outline"
-            message="Halo MoDeal Auto Bali, saya ingin bertanya soal pinjam dana jaminan BPKB."
+            message={`Halo ${SITE.brand}, saya ingin bertanya soal pinjam dana jaminan BPKB.`}
             label="Tanya Pinjaman Dana"
           />
         </div>
@@ -93,7 +94,7 @@ export default function Financing() {
                 ))}
               </div>
               <WhatsAppButton
-                message="Halo MoDeal Auto Bali, saya ingin ajukan pinjaman dana jaminan BPKB mobil."
+                message={`Halo ${SITE.brand}, saya ingin ajukan pinjaman dana jaminan BPKB mobil.`}
                 label="Ajukan Pinjaman Dana"
                 className="mt-6 w-full"
               />
@@ -131,7 +132,7 @@ export default function Financing() {
             eyebrow="Asuransi & Garansi"
             title="Proteksi Menyeluruh"
             highlight="untuk Ketenangan Anda"
-            description="Setiap pembelian mobil bekas di MoDeal Auto Bali bisa dilengkapi asuransi dan garansi resmi."
+            description={`Setiap pembelian mobil bekas di ${SITE.brand} bisa dilengkapi asuransi dan garansi resmi.`}
           />
           <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div className="glow-card p-8">
@@ -162,7 +163,7 @@ export default function Financing() {
             </div>
           </div>
           <div className="mt-12 text-center">
-            <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin tanya soal asuransi dan garansi mobil bekas." label="Konsultasi via WhatsApp" />
+            <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin tanya soal asuransi dan garansi mobil bekas.`} label="Konsultasi via WhatsApp" />
           </div>
         </div>
       </section>

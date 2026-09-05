@@ -32,10 +32,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppButton
-        variant="floating"
-        message="Halo MoDeal Auto Bali, saya ingin bertanya-tanya mengenai mobil."
-      />
+      <WhatsAppButton variant="floating" />
     </div>
   )
 }

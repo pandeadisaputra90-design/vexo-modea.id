@@ -13,6 +13,7 @@ import {
 import PageHero from '../components/ui/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
+import { SITE } from '../config/site'
 
 const PROCESS = [
   {
@@ -55,7 +56,7 @@ export default function Inspection() {
         description="Tim inspeksi bersertifikat kami memeriksa setiap detail kendaraan agar Anda mendapatkan mobil dengan kondisi yang benar-benar sesuai harapan."
       >
         <div className="mt-8">
-          <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin menjadwalkan inspeksi mobil." label="Jadwalkan Inspeksi" />
+          <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin menjadwalkan inspeksi mobil.`} label="Jadwalkan Inspeksi" />
         </div>
       </PageHero>
 
@@ -115,7 +116,7 @@ export default function Inspection() {
             Layanan inspeksi kami juga terbuka untuk mobil dari penjual perorangan di luar showroom kami. Jadwalkan sekarang.
           </p>
           <div className="mt-8">
-            <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin menjadwalkan inspeksi mobil." label="Jadwalkan Inspeksi Sekarang" />
+            <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin menjadwalkan inspeksi mobil.`} label="Jadwalkan Inspeksi Sekarang" />
           </div>
         </div>
       </section>
