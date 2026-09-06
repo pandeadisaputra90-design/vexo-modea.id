@@ -1,6 +1,7 @@
 export const NAV_LINKS = [
   { label: 'Beranda', to: '/' },
   { label: 'Katalog Mobil', to: '/katalog' },
+  { label: 'Showroom 4D', to: '/showroom-4d' },
   { label: 'Sewa Mobil', to: '/sewa' },
   { label: 'Kredit & Asuransi', to: '/kredit-asuransi' },
   { label: 'Inspeksi', to: '/inspeksi' },
