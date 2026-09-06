@@ -41,9 +41,9 @@ export const SITE: SiteConfig = {
   waDefaultMsg: `Halo ${brand}, saya mau tanya unit`,
   phone: '+62 812-3456-7890',
   email: 'halo@modealautobali.id',
-  address: 'Jl. Gatot Subroto Timur No. 88, Denpasar Utara, Bali 80239',
+  address: 'Jl. cekomaria Gg. Gustiwa XG blk. C No.168x, Penatih Denpasar Timur, Kota Denpasar, Bali 80115',
   mapsEmbed:
-    'https://www.google.com/maps?q=MoDeal+Auto+Bali+Jl+Gatot+Subroto+Timur+Denpasar+Bali&output=embed',
+    'https://www.google.com/maps?q=Jl.+cekomaria+Gg.+Gustiwa+XG+blk.+C+No.168x+Penatih+Denpasar+Timur+Kota+Denpasar+Bali+80115&output=embed',
   mapsLink: 'https://maps.app.goo.gl/9vED4KsSDVqTDeW97',
   hours: 'Senin–Jumat 08.30–20.00 WITA, Sabtu–Minggu 09.00–18.00 WITA',
   ogImage: '/og-image.png',

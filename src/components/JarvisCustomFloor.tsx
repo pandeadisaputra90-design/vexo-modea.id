@@ -15,12 +15,12 @@ export default function JarvisCustomFloor() {
       coreDomeRef.current.rotation.y = time * 0.15
     }
 
-    // 2. Ring Mekanis Tebal Bersegmen Kotak (Warna Emas Pekat)
+    // 2. Ring Mekanis Tebal Bersegmen Kotak (Warna Neon Orange)
     if (mechanicalRingRef.current) {
       mechanicalRingRef.current.rotation.z = -time * 0.2
     }
 
-    // 3. Gelombang Lingkaran Partikel Energi Luar (Warna Emas Menyala)
+    // 3. Gelombang Lingkaran Partikel Energi Luar (Warna Electric Blue)
     if (outerWaveRingRef.current) {
       outerWaveRingRef.current.rotation.z = time * 0.08
       const positions = outerWaveRingRef.current.geometry.attributes.position.array as Float32Array
@@ -53,20 +53,20 @@ export default function JarvisCustomFloor() {
       {/* ⚪ KELOMPOK 1: Inti Bola Geodesik Jaring Segitiga */}
       <mesh ref={coreDomeRef} rotation={[Math.PI / 2, 0, 0]}>
         <icosahedronGeometry args={[1.05, 2]} />
-        <meshBasicMaterial color="#ffffff" wireframe transparent opacity={0.4} />
+        <meshBasicMaterial color="#ffffff" wireframe transparent opacity={0.25} />
       </mesh>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.005, 0]}>
         <ringGeometry args={[1.06, 1.09, 64]} />
-        <meshBasicMaterial color="#d4af37" side={THREE.DoubleSide} transparent opacity={0.8} />
+        <meshBasicMaterial color="#00c2ff" side={THREE.DoubleSide} transparent opacity={0.8} />
       </mesh>
 
-      {/* 🟡 KELOMPOK 2: Ring Mekanis Bersegmen Kotak Tebal (Sirkuit) */}
+      {/* 🟠 KELOMPOK 2: Ring Mekanis Bersegmen Kotak Tebal (Sirkuit) */}
       <mesh ref={mechanicalRingRef} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0]}>
         <ringGeometry args={[1.35, 1.75, 40]} />
-        <meshBasicMaterial color="#b38b1b" wireframe side={THREE.DoubleSide} transparent opacity={0.55} />
+        <meshBasicMaterial color="#ff7a1a" wireframe side={THREE.DoubleSide} transparent opacity={0.6} />
       </mesh>
 
-      {/* 🟡 KELOMPOK 3: Efek Kabut Gelombang Partikel Luar */}
+      {/* 🔵 KELOMPOK 3: Efek Kabut Gelombang Partikel Luar */}
       <points ref={outerWaveRingRef} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.015, 0]}>
         <bufferGeometry>
           <bufferAttribute
@@ -77,7 +77,7 @@ export default function JarvisCustomFloor() {
             itemSize={3}
           />
         </bufferGeometry>
-        <pointsMaterial color="#d4af37" size={0.035} transparent opacity={0.75} sizeAttenuation={true} />
+        <pointsMaterial color="#00c2ff" size={0.035} transparent opacity={0.75} sizeAttenuation={true} />
       </points>
     </group>
   )
