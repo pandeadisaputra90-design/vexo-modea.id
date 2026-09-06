@@ -34,6 +34,8 @@ const LOAN_HIGHLIGHTS = [
   { label: 'Bunga', value: 'Kompetitif & transparan' },
 ]
 
+const FINANCE_PARTNERS = ['Adira Finance', 'BCA Finance', 'Mandiri Tunas Finance', 'BFI Finance', 'OTO Finance', 'WOM Finance']
+
 const SERVICES = [
   { id: 'kredit', icon: FileText, title: 'Kredit Mobil', teaser: 'Simulasi DP & cicilan otomatis' },
   { id: 'pinjaman', icon: Wallet, title: 'Pinjam Dana BPKB', teaser: 'Dana cepat jaminan BPKB' },
@@ -74,6 +76,24 @@ export default function Financing() {
           />
         </div>
       </PageHero>
+
+      <section className="relative bg-charcoal-900 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-white/40">
+            Mitra Pembiayaan Resmi — Terdaftar &amp; Diawasi OJK
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {FINANCE_PARTNERS.map((partner) => (
+              <span
+                key={partner}
+                className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-white/70"
+              >
+                {partner}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="relative bg-charcoal-950 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

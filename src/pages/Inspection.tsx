@@ -13,6 +13,7 @@ import {
   Cpu,
   ScrollText,
   Route,
+  BadgeCheck,
 } from 'lucide-react'
 import PageHero from '../components/ui/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
@@ -84,6 +85,10 @@ export default function Inspection() {
       >
         <div className="mt-8">
           <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin menjadwalkan inspeksi mobil.`} label="Jadwalkan Inspeksi" />
+        </div>
+        <div className="mt-6 flex items-center justify-center gap-2 text-xs text-white/40">
+          <BadgeCheck className="h-4 w-4 text-ember-400" />
+          100% Teknisi Bersertifikat Resmi
         </div>
       </PageHero>
 
