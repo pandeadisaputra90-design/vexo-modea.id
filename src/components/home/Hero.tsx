@@ -3,6 +3,7 @@ import { ShieldCheck, Sparkles } from 'lucide-react'
 import WhatsAppButton from '../ui/WhatsAppButton'
 import RotatingShowcase from './RotatingShowcase'
 import { TRUST_STATS } from '../../data/testimonials'
+import { SITE } from '../../config/site'
 
 export default function Hero() {
   return (
@@ -41,7 +42,7 @@ export default function Hero() {
             </Link>
             <WhatsAppButton
               variant="outline"
-              message="Halo MoDeal Auto Bali, saya ingin konsultasi mengenai mobil bekas berkualitas."
+              message={`Halo ${SITE.brand}, saya ingin konsultasi mengenai mobil bekas berkualitas.`}
               label="Konsultasi via WhatsApp"
             />
           </div>

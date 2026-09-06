@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Car, Key, Landmark, ShieldCheck, SearchCheck, ArrowUpRight } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
+import { SITE } from '../../config/site'
 
 const SERVICES = [
   {
@@ -48,7 +49,7 @@ export default function ServicesOverview() {
           eyebrow="Layanan Kami"
           title="Solusi Mobilitas"
           highlight="Lengkap & Terpercaya"
-          description="Dari pembelian, pembiayaan, hingga perlindungan — MoDeal Auto Bali hadir untuk memenuhi seluruh kebutuhan otomotif Anda di Bali."
+          description={`Dari pembelian, pembiayaan, hingga perlindungan — ${SITE.brand} hadir untuk memenuhi seluruh kebutuhan otomotif Anda di Bali.`}
         />
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

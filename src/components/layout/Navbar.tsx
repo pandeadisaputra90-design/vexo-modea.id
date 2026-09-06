@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, Phone } from 'lucide-react'
-import { NAV_LINKS, BUSINESS } from '../../data/constants'
+import { NAV_LINKS } from '../../data/constants'
+import { SITE } from '../../config/site'
+
+const [brandFirst, brandSecond, brandThird] = SITE.brand.split(' ')
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -31,8 +34,9 @@ export default function Navbar() {
             M
           </span>
           <span className="font-display text-lg font-bold leading-none tracking-wide text-white">
-            MoDeal<span className="text-electric-400"> Auto</span>
-            <span className="block text-[10px] font-medium tracking-[0.3em] text-white/50">BALI</span>
+            {brandFirst}
+            <span className="text-electric-400"> {brandSecond}</span>
+            <span className="block text-[10px] font-medium tracking-[0.3em] text-white/50">{brandThird?.toUpperCase()}</span>
           </span>
         </Link>
 
@@ -53,9 +57,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={`tel:${BUSINESS.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 text-sm text-white/70 hover:text-white">
+          <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 text-sm text-white/70 hover:text-white">
             <Phone className="h-4 w-4 text-electric-400" />
-            {BUSINESS.phone}
+            {SITE.phone}
           </a>
           <Link to="/katalog" className="btn-primary !px-5 !py-2.5 text-xs">
             Lihat Koleksi Mobil

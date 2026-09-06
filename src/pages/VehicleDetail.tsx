@@ -11,9 +11,11 @@ import {
   Users,
   Droplet,
   Cog,
+  FileBadge,
 } from 'lucide-react'
 import { getVehicleById, VEHICLES } from '../data/vehicles'
 import { formatIDR, formatKm, estimateMonthlyInstallment } from '../data/constants'
+import { buildVehicleWaMessage } from '../config/site'
 import VehicleArt from '../components/ui/VehicleArt'
 import VehicleCard from '../components/ui/VehicleCard'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
@@ -51,9 +53,7 @@ export default function VehicleDetail() {
     )
   }
 
-  const waMessage = `Halo MoDeal Auto Bali, saya tertarik dengan ${vehicle.brand} ${vehicle.model} ${vehicle.variant} tahun ${vehicle.year} seharga ${formatIDR(
-    vehicle.price,
-  )}. Mohon info lebih lanjut.`
+  const waMessage = buildVehicleWaMessage(vehicle)
 
   return (
     <section className="bg-charcoal-950 pb-24 pt-28 sm:pt-32">
@@ -96,6 +96,7 @@ export default function VehicleDetail() {
                 <SpecRow icon={Droplet} label="Tangki BBM" value={`${vehicle.specs.fuelTankL} Liter`} />
                 <SpecRow icon={Settings2} label="Penggerak" value={vehicle.specs.driveType} />
                 <SpecRow icon={MapPin} label="Lokasi" value={vehicle.location} />
+                <SpecRow icon={FileBadge} label="Plat Nomor" value={vehicle.plat} />
               </div>
             </div>
 

@@ -1,6 +1,7 @@
 import { Users, Settings2 } from 'lucide-react'
 import type { RentalVehicle } from '../../data/types'
-import { formatIDR, waLink } from '../../data/constants'
+import { formatIDR } from '../../data/constants'
+import { SITE, waLink } from '../../config/site'
 import VehicleArt from './VehicleArt'
 
 export default function RentalCard({ rental }: { rental: RentalVehicle }) {
@@ -51,7 +52,7 @@ export default function RentalCard({ rental }: { rental: RentalVehicle }) {
           </div>
           <a
             href={waLink(
-              `Halo MoDeal Auto Bali, saya ingin sewa ${rental.brand} ${rental.model}. Mohon info ketersediaan dan cara pemesanannya ya.`,
+              `Halo ${SITE.brand}, saya ingin sewa ${rental.brand} ${rental.model}. Mohon info ketersediaan dan cara pemesanannya ya.`,
             )}
             target="_blank"
             rel="noopener noreferrer"

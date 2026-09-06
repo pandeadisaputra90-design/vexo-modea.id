@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Calendar, Gauge, Fuel, Settings2 } from 'lucide-react'
 import type { Vehicle } from '../../data/types'
-import { estimateMonthlyInstallment, formatIDR, formatKm, waLink } from '../../data/constants'
+import { estimateMonthlyInstallment, formatIDR, formatKm } from '../../data/constants'
+import { waVehicleLink } from '../../config/site'
 import VehicleArt from './VehicleArt'
 
 export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
@@ -68,11 +69,7 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
               Detail
             </Link>
             <a
-              href={waLink(
-                `Halo MoDeal Auto Bali, saya tertarik dengan ${vehicle.brand} ${vehicle.model} ${vehicle.variant} tahun ${vehicle.year} (${formatIDR(
-                  vehicle.price,
-                )}). Apakah unit masih tersedia?`,
-              )}
+              href={waVehicleLink(vehicle)}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary flex-1 !px-3 !py-2 text-xs"

@@ -3,6 +3,7 @@ import PageHero from '../components/ui/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
 import WhatsAppButton from '../components/ui/WhatsAppButton'
 import { TRUST_STATS } from '../data/testimonials'
+import { SITE } from '../config/site'
 
 const VALUES = [
   { icon: Heart, title: 'Kejujuran', desc: 'Kondisi mobil dan harga selalu transparan, tanpa biaya tersembunyi.' },
@@ -11,7 +12,7 @@ const VALUES = [
 ]
 
 const TIMELINE = [
-  { year: '2014', title: 'Awal Mula', desc: 'MoDeal Auto Bali berdiri sebagai showroom kecil di Denpasar.' },
+  { year: '2014', title: 'Awal Mula', desc: `${SITE.brand} berdiri sebagai showroom kecil di Denpasar.` },
   { year: '2017', title: 'Ekspansi Layanan', desc: 'Mulai menghadirkan layanan rental mobil dan kredit kendaraan.' },
   { year: '2020', title: 'Digitalisasi', desc: 'Meluncurkan layanan konsultasi digital via WhatsApp dan katalog online.' },
   { year: '2024', title: 'Terpercaya di Bali', desc: 'Melayani ribuan pelanggan dengan jaringan mitra leasing & asuransi luas.' },
@@ -22,8 +23,8 @@ export default function About() {
     <>
       <PageHero
         eyebrow="Tentang Kami"
-        title="MoDeal Auto Bali"
-        description="Trusted car solution di Denpasar, Bali — hadir untuk memberikan pengalaman jual beli, sewa, dan pembiayaan mobil yang aman, transparan, dan nyaman."
+        title={SITE.brand}
+        description={`${SITE.tagline} Hadir untuk memberikan pengalaman jual beli, sewa, dan pembiayaan mobil yang aman, transparan, dan nyaman.`}
       />
 
       <section className="relative bg-charcoal-950 py-20">
@@ -81,7 +82,7 @@ export default function About() {
 
       <section className="relative bg-charcoal-950 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Perjalanan Kami" title="Sejarah" highlight="MoDeal Auto Bali" />
+          <SectionHeading eyebrow="Perjalanan Kami" title="Sejarah" highlight={SITE.brand} />
           <div className="mt-14 space-y-8 border-l border-white/10 pl-8">
             {TIMELINE.map((item) => (
               <div key={item.year} className="relative">
@@ -103,7 +104,7 @@ export default function About() {
             <p className="max-w-xl text-white/60">
               Datang langsung untuk melihat koleksi mobil kami atau berkonsultasi dengan tim profesional kami.
             </p>
-            <WhatsAppButton message="Halo MoDeal Auto Bali, saya ingin berkunjung ke showroom." label="Konsultasi via WhatsApp" />
+            <WhatsAppButton message={`Halo ${SITE.brand}, saya ingin berkunjung ke showroom.`} label="Konsultasi via WhatsApp" />
           </div>
         </div>
       </section>
