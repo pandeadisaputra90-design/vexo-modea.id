@@ -28,7 +28,7 @@ const PROCESS = [
   },
   {
     icon: ClipboardList,
-    title: 'Pemeriksaan 150+ Titik',
+    title: 'Pemeriksaan 120 Titik',
     desc: 'Tim teknisi profesional memeriksa mesin, kaki-kaki, kelistrikan, hingga eksterior & interior.',
   },
   {
@@ -147,7 +147,7 @@ export default function Inspection() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Cakupan Pemeriksaan"
-            title="150+ Titik Pemeriksaan"
+            title="120 Titik Pemeriksaan"
             highlight="Menyeluruh"
             description="Setiap kategori diperiksa oleh teknisi berpengalaman menggunakan standar checklist ketat."
           />

@@ -35,7 +35,7 @@ const SERVICES = [
   {
     icon: SearchCheck,
     title: 'Inspeksi Mobil Profesional',
-    desc: 'Tim teknisi berpengalaman memeriksa 150+ titik untuk memastikan kondisi mobil benar-benar prima.',
+    desc: 'Tim teknisi berpengalaman memeriksa 120 titik untuk memastikan kondisi mobil benar-benar prima.',
     to: '/inspeksi',
     cta: 'Jadwalkan Inspeksi',
   },

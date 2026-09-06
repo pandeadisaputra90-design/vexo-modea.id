@@ -35,6 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/katalog" element={<Inventory />} />
           <Route path="/katalog/:id" element={<VehicleDetail />} />
+          <Route path="/katalog/:id/:tab" element={<VehicleDetail />} />
           <Route path="/sewa" element={<Rental />} />
           <Route path="/kredit-asuransi" element={<Financing />} />
           <Route path="/inspeksi" element={<Inspection />} />

@@ -1,18 +1,16 @@
 import { Link } from 'react-router-dom'
 import { ShieldCheck, Sparkles } from 'lucide-react'
 import WhatsAppButton from '../ui/WhatsAppButton'
-import RotatingShowcase from './RotatingShowcase'
+import DiagnosticHero from './DiagnosticHero'
 import { TRUST_STATS } from '../../data/testimonials'
 import { SITE } from '../../config/site'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-charcoal-950 pb-20 pt-32 sm:pt-40">
+    <section className="relative overflow-hidden bg-charcoal-950 pb-20 pt-28 sm:pt-40">
       <div className="absolute inset-0 bg-grid opacity-40" />
       <div className="absolute inset-0 bg-radial-glow" />
       <div className="absolute inset-x-0 bottom-0 h-64 bg-ember-glow" />
-      <div className="absolute left-1/4 top-24 h-72 w-72 animate-pulse-glow rounded-full bg-electric-500/20 blur-[100px]" />
-      <div className="absolute right-1/4 top-48 h-72 w-72 animate-pulse-glow rounded-full bg-ember-500/20 blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
@@ -20,14 +18,23 @@ export default function Hero() {
             <Sparkles className="h-3.5 w-3.5" /> Trusted Car Solution di Denpasar, Bali
           </span>
           <h1
-            className="mt-6 animate-fade-up font-display text-4xl font-black leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mt-4 animate-fade-up font-display text-3xl font-black leading-[1.1] text-white sm:mt-6 sm:text-5xl sm:leading-[1.05] md:text-6xl lg:text-7xl"
             style={{ animationDelay: '0.1s', opacity: 0 }}
           >
             Temukan Mobil <span className="text-gradient-blue">Impianmu</span>
             <br className="hidden sm:block" /> di <span className="text-gradient-orange">Bali</span>
           </h1>
+        </div>
+
+        {/* Diagnostic panel comes right after the headline so price/km/year/transmisi/pajak
+            are legible on the first screen on mobile, ahead of the marketing copy below. */}
+        <div className="mt-8 sm:mt-12">
+          <DiagnosticHero />
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl text-center">
           <p
-            className="mx-auto mt-6 animate-fade-up text-base text-white/60 sm:text-lg"
+            className="mx-auto animate-fade-up text-base text-white/60 sm:text-lg"
             style={{ animationDelay: '0.2s', opacity: 0 }}
           >
             Jual beli mobil bekas berkualitas, rental terpercaya, kredit &amp; asuransi, hingga inspeksi
@@ -54,10 +61,6 @@ export default function Hero() {
             <ShieldCheck className="h-4 w-4 text-electric-400" />
             Terinspeksi &middot; Bergaransi &middot; Legalitas Aman
           </div>
-        </div>
-
-        <div className="mt-16 animate-fade-up" style={{ animationDelay: '0.5s', opacity: 0 }}>
-          <RotatingShowcase />
         </div>
 
         <div className="mt-16 grid grid-cols-2 gap-4 border-t border-white/10 pt-10 sm:grid-cols-4">

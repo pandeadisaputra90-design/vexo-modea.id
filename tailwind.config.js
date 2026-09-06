@@ -65,6 +65,7 @@ export default {
         'fade-up': 'fade-up 0.8s ease-out forwards',
         marquee: 'marquee 30s linear infinite',
         shimmer: 'shimmer 2.5s linear infinite',
+        'diagnostic-in': 'diagnostic-in 0.2s ease-out both',
       },
       keyframes: {
         float: {
@@ -86,6 +87,10 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        'diagnostic-in': {
+          '0%': { opacity: '0.6', transform: 'translateY(4px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       backdropBlur: {
